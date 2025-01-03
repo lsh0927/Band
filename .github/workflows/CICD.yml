@@ -10,7 +10,7 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write # PR 생성 권한 추가
+  pull-requests: write
 
 jobs:
   create-pr:
@@ -20,6 +20,6 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: feature/automated-pr
+          base: develop           # base branch 추가
           title: 'Automated Pull Request'
           body: '자동으로 생성된 Pull Request입니다.'
